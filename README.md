@@ -4,7 +4,7 @@
   
 ### Инструкция по установке:
 1. Создайте резервную копию вашего магазина и базы данных
-2. Загрузите архив с модулем [cs-cart-hutkigrosh-module.zip](https://github.com/esasby/hgrosh/blob/master/CMS/Plugins/CSCart/4.7/cs-cart-hutkigrosh-module.zip)
+2. Загрузите архив с модулем [cs-cart-hutkigrosh-module.zip](https://github.com/esasby/hutkigrosh-cscart4.7-module/blob/master/cs-cart-hutkigrosh-module.zip)
 3. В административной части CS-Cart выберите `Модули — Управление модулями — Загрузить и установить модуль`. Выберите архив и нажмите `Загрузить и установить`.
 4. Перейдите в меню `Администрирование - Способы оплаты - Добавить новый способ оплаты`.
 6. Заполните стандартнгые поля для нового способа оплаты. Поле `Инструкции по оплате` для Hutkigrosh будет отображаться 

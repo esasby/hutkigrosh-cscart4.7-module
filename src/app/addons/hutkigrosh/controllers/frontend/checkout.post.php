@@ -21,7 +21,9 @@ if ($mode == 'complete') {
                     ->setMsgUnsuccessClass("cm-notification-content notification-content alert-error")
                     ->setMsgSuccessClass("cm-notification-content notification-content alert-success")
                     ->setWebpayButtonClass("ty-btn ty-btn__secondary")
-                    ->setAlfaclickButtonClass("ty-btn ty-btn__secondary");
+                    ->setAlfaclickButtonClass("ty-btn ty-btn__secondary")
+                    ->setTabLabelClass("ty-step__title-active ty-step__title-txt")//                    ->setTabContentClass("ty-step__container-active")
+                ;
                 Tygh::$app['view']->assign('completionPanel', $completionPanel);
             } catch (Throwable $e) {
                 Logger::getLogger("complete")->error("Exception:", $e);

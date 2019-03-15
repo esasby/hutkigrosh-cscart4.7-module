@@ -14,6 +14,7 @@ use esas\hutkigrosh\view\admin\fields\ConfigField;
 use esas\hutkigrosh\view\admin\fields\ConfigFieldCheckbox;
 use esas\hutkigrosh\view\admin\fields\ConfigFieldList;
 use esas\hutkigrosh\view\admin\fields\ConfigFieldPassword;
+use esas\hutkigrosh\view\admin\fields\ConfigFieldRichtext;
 use esas\hutkigrosh\view\admin\fields\ConfigFieldTextarea;
 use esas\hutkigrosh\view\admin\fields\ListOption;
 
@@ -79,6 +80,26 @@ class ConfigFormCSCart extends ConfigFormHtml
     }
 
     function generateTextAreaField(ConfigFieldTextarea $configField)
+    {
+        return element::div(
+            attribute::clazz("control-group"),
+            self::elementLabel($configField),
+            element::div(
+                attribute::clazz("controls"),
+                element::textarea(
+                    attribute::id($configField->getKey()),
+                    self::attributeName($configField),
+                    attribute::clazz("input-large"),
+                    attribute::rows($configField->getRows()),
+                    attribute::cols($configField->getCols()),
+                    attribute::placeholder($configField->getName()),
+                    element::value($configField->getValue())
+                )
+            )
+        );
+    }
+
+    function generateRichtextField(ConfigFieldRichtext $configField)
     {
         return element::div(
             attribute::clazz("control-group"),

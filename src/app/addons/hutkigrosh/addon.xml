@@ -16,6 +16,13 @@
             ('', 'Hutkigrosh', 'hutkigrosh.php', 'views/orders/components/payments/cc_outside.tpl', 'hutkigrosh.tpl',
             'N', 'P', 'hutkigrosh')
         </item>
+        <item for="uninstall">DELETE FROM ?:payment_descriptions
+            WHERE payment_id IN (SELECT payment_id FROM ?:payments
+            WHERE processor_id IN (SELECT processor_id FROM ?:payment_processors WHERE processor = 'hutkigrosh'))
+        </item>
+        <item for="uninstall">DELETE FROM ?:payments
+            WHERE processor_id IN (SELECT processor_id FROM ?:payment_processors WHERE processor = 'hutkigrosh')
+        </item>
         <item for="uninstall">DELETE FROM ?:payment_processors WHERE processor = 'hutkigrosh'</item>
     </queries>
     <compatibility>
@@ -38,4 +45,7 @@
             </json>
         </php_extensions>
     </compatibility>
+    <!--<functions>-->
+    <!--<item for="install">fn_hutkigrosh_install_db</item>-->
+    <!--</functions>-->
 </addon>

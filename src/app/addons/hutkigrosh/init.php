@@ -10,10 +10,6 @@ if (!defined('BOOTSTRAP')) {
     die('Access denied');
 }
 
-fn_register_hooks(
-    'summary_get_payment_method'
-);
-
 require_once(dirname(__FILE__) . '/lib/vendor/esas/hutkigrosh-api-php/src/esas/hutkigrosh/CmsPlugin.php');
 
 use esas\hutkigrosh\CmsPlugin;

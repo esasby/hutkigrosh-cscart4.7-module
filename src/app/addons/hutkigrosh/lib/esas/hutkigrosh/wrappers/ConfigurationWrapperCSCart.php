@@ -35,11 +35,11 @@ class ConfigurationWrapperCSCart extends ConfigurationWrapper
         $processor_name = 'hutkigrosh';
         $processor_data = db_get_row("SELECT * FROM ?:payment_processors WHERE processor = ?s OR processor_script = ?s", $processor_name, strtolower($processor_name) . ".tpl");
         if (empty($processor_data)) {
-            return false;
+            return array();
         }
         $pdata = db_get_row("SELECT processor_params FROM ?:payments WHERE processor_id = ?i", $processor_data['processor_id']);
-        if (empty($pdata)) {
-            return false;
+        if (empty($pdata) || empty($pdata['processor_params'])) {
+            return array();
         }
         return unserialize($pdata['processor_params']);
     }

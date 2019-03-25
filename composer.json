@@ -3,7 +3,7 @@
   "description": "Hutkigrosh cscart payment gateway integration",
   "require": {
     "php": ">= 5.6.0",
-    "esas/hutkigrosh-api-php": "v2.6.1"
+    "esas/hutkigrosh-api-php": "v2.6.2"
   },
   "authors": [
     {
